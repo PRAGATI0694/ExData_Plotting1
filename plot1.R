@@ -1,7 +1,7 @@
 data <-read.csv(file.choose(), header=TRUE,sep=";", dec=".")
 subSetData <- data[data$Date %in% c("1/2/2007","2/2/2007") ,]
-#str(subSetData)
+str(subSetData)
 globalActivePower <- as.numeric(subSetData$Global_active_power)
 png("plot1.png", width=480, height=480)
-hist(globalActivePower, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
-dev.off()
+p <-hist(globalActivePower, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+print(p)
